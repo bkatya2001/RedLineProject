@@ -19,12 +19,22 @@ namespace RedLineProject.Classes
             count = _count;
         }
 
-        public int getLength() { return length; }
-        public int getWidth() { return width; }
-        public int getCount() { return count; }
+        public int GetLength() { return length; }
+        public int GetWidth() { return width; }
+        public int GetCount() { return count; }
 
-        public void increment() { count++; }
+        public void Increment() { count++; }
 
-        public void decrement() { count--; }
+        public void Decrement() { count--; }
+
+        public static int CompareDetails(Detail x, Detail y)
+        {
+            int xS = x.GetLength() * x.GetWidth();
+            int yS = y.GetLength() * y.GetWidth();
+            if (xS > yS) return 1;
+            if (xS == yS) return 0;
+            if (xS < yS) return -1;
+            return 0;
+        }
     }
 }
