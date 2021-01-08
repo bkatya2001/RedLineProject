@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RedLineProject.Classes;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace RedLineProject
 {
-    public partial class Form1 : Form
+    public partial class Form1 : MaterialForm
     {
         List<Detail> details; // Лист деталей
         int[,] field; // Двумерный массив для базовой доски
@@ -111,6 +113,16 @@ namespace RedLineProject
         public Form1()
         {
             InitializeComponent();
+
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Orange50, Primary.Brown300,
+                Primary.Orange200, Accent.Orange200,
+                TextShade.BLACK
+            );
         }
 
         private void Form1_Load(object sender, EventArgs e)
