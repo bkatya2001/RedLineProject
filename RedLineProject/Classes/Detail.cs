@@ -31,9 +31,9 @@ namespace RedLineProject.Classes
         {
             int xS = x.GetLength() * x.GetWidth();
             int yS = y.GetLength() * y.GetWidth();
-            if (xS > yS) return 1;
+            if (xS > yS) return -1;
             if (xS == yS) return 0;
-            if (xS < yS) return -1;
+            if (xS < yS) return 1;
             return 0;
         }
     }
