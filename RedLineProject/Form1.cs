@@ -36,7 +36,43 @@ namespace RedLineProject
 
         private void SetOne(int iStart, int jStart, int length, int width) // Установка единиц по размеру детали
         {
-            for (int i = iStart; i < iStart + width; i++)
+            int k = iStart - 1; // Верхняя граница
+            while (k >= 0 && k != iStart - edge)
+            {
+                for (int j = jStart; j < jStart + length; j++)
+                {
+                    field[k, j] = 1;
+                }
+                k--;
+            }
+            k = iStart + width; // Нижняя граница
+            while (k < baseDetail.GetLength() && k != iStart + edge + width - 1)
+            {
+                for (int j = jStart; j < jStart + length; j++)
+                {
+                    field[k, j] = 1;
+                }
+                k++;
+            }
+            k = jStart - 1; // Граница слева
+            while (k >= 0 && k != jStart - edge)
+            {
+                for (int i = iStart; i < iStart + width; i++)
+                {
+                    field[i, k] = 1;
+                }
+                k--;
+            }
+            k = jStart + length; // Граница справа
+            while (k < baseDetail.GetWidth() && k != jStart + edge + length - 1)
+            {
+                for (int i = iStart; i < iStart + width; i++)
+                {
+                    field[i, k] = 1;
+                }
+                k++;
+            }
+            for (int i = iStart; i < iStart + width; i++) // Деталь
             {
                 for (int j = jStart; j < jStart + length; j++)
                 {
