@@ -75,6 +75,38 @@ namespace RedLineProject
                         if (count != -1)
                         {
                             details[index].Decrement();
+                            SetOne(i, j-length+1, length, width);
+                            return true;
+                        }
+                    }
+                }
+            }
+            length = details[index].GetWidth();
+            width = details[index].GetLength();
+            for (int i = 0; i < baseW; i++)
+            {
+                int count = 0;
+                for (int j = 0; j < baseL; j++)
+                {
+                    if (field[i, j] == 1) count = 0;
+                    if (field[i, j] == 0) count++;
+                    if (count == length)
+                    {
+                        for (int k = i + 1; k < i + width; k++)
+                        {
+                            for (int l = j + 1; l < j + length; l++)
+                            {
+                                if (field[i, j] == 1)
+                                {
+                                    count = -1;
+                                    break;
+                                }
+                            }
+                            if (count == -1) break;
+                        }
+                        if (count != -1)
+                        {
+                            details[index].Decrement();
                             SetOne(i, j, length, width);
                             return true;
                         }
@@ -87,7 +119,7 @@ namespace RedLineProject
         private void Compute(int _length, int _width, int _edge) // метод для рассчёта (на вход размеры базовой доски)
         {
             baseDetail = new Detail(_length, _width, 1);
-            field = new int[_length, _width];
+            field = new int[_width, _length];
             edge = _edge;
             details.Sort(Detail.CompareDetails);
             while (details.Count > 0)
@@ -129,6 +161,44 @@ namespace RedLineProject
         {
             details = new List<Detail>();
             count = 0;
+        }
+
+        private void materialFlatButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int length = Convert.ToInt32(detailLengthInput.Text);
+                int width = Convert.ToInt32(detailWidthInput.Text);
+                int count = Convert.ToInt32(detailCountInput.Text);
+                details.Add(new Detail(length, width, count));
+                detailLengthInput.Clear();
+                detailWidthInput.Clear();
+                detailCountInput.Clear();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Введите число.", "Ошибка ввода", MessageBoxButtons.OK);
+            }
+        }
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int length = Convert.ToInt32(baseDetailLengthInput.Text);
+                int width = Convert.ToInt32(baseDetailWidthInput.Text);
+                int edge = Convert.ToInt32(edgeInput.Text);
+                Compute(length, width, edge);
+                baseDetailLengthInput.Clear();
+                baseDetailWidthInput.Clear();
+                edgeInput.Clear();
+                MessageBox.Show("Вам понадобится " + count + "ДСП.", "Результат", MessageBoxButtons.OK);
+                details.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Введите число.", "Ошибка ввода", MessageBoxButtons.OK);
+            }
         }
     }
 }
