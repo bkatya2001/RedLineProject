@@ -36,42 +36,46 @@ namespace RedLineProject
 
         private void SetOne(int iStart, int jStart, int length, int width) // Установка единиц по размеру детали
         {
-            int k = iStart - 1; // Верхняя граница
-            while (k >= 0 && k != iStart - edge)
+            if (edge > 0)
             {
-                for (int j = jStart; j < jStart + length; j++)
+                int k = iStart - 1; // Верхняя граница
+                while (k >= 0 && k != iStart - edge)
                 {
-                    field[k, j] = 1;
+                    for (int j = jStart; j < jStart + length; j++)
+                    {
+                        field[k, j] = 1;
+                    }
+                    k--;
                 }
-                k--;
-            }
-            k = iStart + width; // Нижняя граница
-            while (k < baseDetail.GetLength() && k != iStart + edge + width - 1)
-            {
-                for (int j = jStart; j < jStart + length; j++)
+                k = iStart + width; // Нижняя граница
+                while (k < baseDetail.GetLength() && k != iStart + edge + width - 1)
                 {
-                    field[k, j] = 1;
+                    for (int j = jStart; j < jStart + length; j++)
+                    {
+                        field[k, j] = 1;
+                    }
+                    k++;
                 }
-                k++;
-            }
-            k = jStart - 1; // Граница слева
-            while (k >= 0 && k != jStart - edge)
-            {
-                for (int i = iStart; i < iStart + width; i++)
+                k = jStart - 1; // Граница слева
+                while (k >= 0 && k != jStart - edge)
                 {
-                    field[i, k] = 1;
+                    for (int i = iStart; i < iStart + width; i++)
+                    {
+                        field[i, k] = 1;
+                    }
+                    k--;
                 }
-                k--;
-            }
-            k = jStart + length; // Граница справа
-            while (k < baseDetail.GetWidth() && k != jStart + edge + length - 1)
-            {
-                for (int i = iStart; i < iStart + width; i++)
+                k = jStart + length; // Граница справа
+                while (k < baseDetail.GetWidth() && k != jStart + edge + length - 1)
                 {
-                    field[i, k] = 1;
+                    for (int i = iStart; i < iStart + width; i++)
+                    {
+                        field[i, k] = 1;
+                    }
+                    k++;
                 }
-                k++;
             }
+            
             for (int i = iStart; i < iStart + width; i++) // Деталь
             {
                 for (int j = jStart; j < jStart + length; j++)
@@ -206,10 +210,24 @@ namespace RedLineProject
                 int length = Convert.ToInt32(detailLengthInput.Text);
                 int width = Convert.ToInt32(detailWidthInput.Text);
                 int count = Convert.ToInt32(detailCountInput.Text);
-                details.Add(new Detail(length, width, count));
-                detailLengthInput.Clear();
-                detailWidthInput.Clear();
-                detailCountInput.Clear();
+                if (length <= 0 || width <= 0 || count < 1)
+                    MessageBox.Show("Введите размеры детали", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    details.Add(new Detail(length, width, count));
+                    detailLengthInput.Clear();
+                    detailWidthInput.Clear();
+                    detailCountInput.Clear();
+
+                    detailListView.Items.Clear();
+
+                    foreach (var d in details)
+                    {
+                        detailListView.Items.Add(new ListViewItem(new string[]
+                        { d.GetLength().ToString() + " * " + d.GetWidth().ToString(), d.GetCount().ToString() }));
+                    }
+                        
+                }
             }
             catch (Exception)
             {
@@ -224,16 +242,21 @@ namespace RedLineProject
                 int length = Convert.ToInt32(baseDetailLengthInput.Text);
                 int width = Convert.ToInt32(baseDetailWidthInput.Text);
                 int edge = Convert.ToInt32(edgeInput.Text);
-                Compute(length, width, edge);
-                baseDetailLengthInput.Clear();
-                baseDetailWidthInput.Clear();
-                edgeInput.Clear();
-                MessageBox.Show("Вам понадобится " + count + "ДСП.", "Результат", MessageBoxButtons.OK);
-                details.Clear();
+                if (length <= 0 || width <= 0 || edge < 0)
+                    MessageBox.Show("Введите размеры ДСП.", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    Compute(length, width, edge);
+                    baseDetailLengthInput.Clear();
+                    baseDetailWidthInput.Clear();
+                    edgeInput.Clear();
+                    MessageBox.Show("Вам понадобится " + count + " ДСП.", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    details.Clear();
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Введите число.", "Ошибка ввода", MessageBoxButtons.OK);
+                MessageBox.Show("Введите число.", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
