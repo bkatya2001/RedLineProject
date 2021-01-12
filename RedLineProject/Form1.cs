@@ -245,7 +245,7 @@ namespace RedLineProject
             }
             catch (Exception)
             {
-                MessageBox.Show("Введите число.", "Ошибка ввода", MessageBoxButtons.OK);
+                MessageBox.Show("Введите число.", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
