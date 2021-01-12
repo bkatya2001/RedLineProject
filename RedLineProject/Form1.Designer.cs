@@ -293,6 +293,7 @@
             this.helpLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.helpLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.helpLabel.Name = "helpLabel";
+            this.helpLabel.Click += new System.EventHandler(this.helpLabel_Click);
             // 
             // Form1
             // 

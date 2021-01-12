@@ -10,15 +10,15 @@
 
 Для начала расчётов необходимо указать размеры ДСП, а именно длину и ширину в миллиметрах, и размер фрезы. Программа автоматически учитывает, что станок обрезает лист с краёв (10 мм). Под размером фрезы понимается расстояние в миллиметрах между двумя деталями на листе.
 
-<div style="text-align:center">
-    <img src="input_DSP.png" />
+<div align="center">
+    <img src="D:\develop\RedLineProject\docs\input_DSP.png" />
     <p>Поля ввода для листа ДСП</p>
 </div>
 
 Для выполнения расчётов необходимо указать параметры всех деталей. Деталь вводится в программу после указания её длины и ширины в миллиметрах, а также количества, при нажатии на кнопку «Добавить».
 
-<div style="text-align:center">
-    <img src="input_detail.png" />
+<div align="center">
+    <img src="D:\develop\RedLineProject\docs\input_detail.png" />
     <p>Поля ввода для детали</p>
 </div>
 
@@ -26,36 +26,38 @@
 
 `Длина *  Ширина`; `Количество.`
 
-<div style="text-align:center">
-    <img src="my_details.png" />
+<div align="center">
+    <img src="D:\develop\RedLineProject\docs\my_details.png" />
     <p>Добавленные детали</p>
 </div>
 
 Для выполнения расчётов необходимо нажать на кнопку «Рассчитать». Результат появится во всплывающем окне.
 
-<div style="text-align:center">
-    <img src="result.png" />
+<div align="center">
+    <img src="D:\develop\RedLineProject\docs\result.png" />
     <p>Результат</p>
 </div>
+
+***
 
     Во всех полях для ввода необходимо указать числа, иначе возможно получить следующие сообщения от программы:
 
 1.  Длина или ширина детали меньше или равны нолю или количество меньше 1.
 
-![err_1](err_1.png)
+![err_1](file:///D:/develop/RedLineProject/docs/err_1.png)
 
 ***
 2. В поле ввода указаны символы, не являющиеся цифрами.
 
- ![err](err_2.png)
+ ![err](file:///D:/develop/RedLineProject/docs/err_2.png)
 
 ***
 3. Фреза, длина или ширина листа ДСП меньше или равны нолю.
 
-![err](err_3.png)
+![err](file:///D:/develop/RedLineProject/docs/err_3.png)
 
 ***
 4. Среди введённых деталей есть такие, размеры которых превышают размер листа ДСП. Все данные необходимо ввести заново.
 
-![err](err_4.png)
+![err](file:///D:/develop/RedLineProject/docs/err_4.png)
 ***
