@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using RedLineProject.Classes;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using Markdig;
 
 namespace RedLineProject
 {
@@ -245,7 +246,7 @@ namespace RedLineProject
             }
             catch (Exception)
             {
-                MessageBox.Show("Введите число.", "Ошибка ввода", MessageBoxButtons.OK);
+                MessageBox.Show("Введите число.", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -302,6 +303,21 @@ namespace RedLineProject
             }
 
             return true;
+        }
+
+        private string GetDocs()
+        {
+            string text = System.IO.File.ReadAllText(@"D:\develop\RedLineProject\docs\for_users.md");
+            var result = Markdown.ToHtml(text);
+
+            return result;
+        }
+
+        private void helpLabel_Click(object sender, EventArgs e)
+        {
+            var helpForm = new HelpForm(GetDocs());
+
+            helpForm.Show();
         }
     }
 }
