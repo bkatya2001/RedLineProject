@@ -307,8 +307,7 @@ namespace RedLineProject
 
         private string GetDocs()
         {
-            string text = System.IO.File.ReadAllText(Environment.CurrentDirectory.Remove(
-                Environment.CurrentDirectory.IndexOf("RedLineProject")) + @"RedLineProject\docs\for_users.md");
+            string text = System.IO.File.ReadAllText(Environment.CurrentDirectory + @"\docs\for_users.md");
             var result = Markdown.ToHtml(text);
 
             return result;
