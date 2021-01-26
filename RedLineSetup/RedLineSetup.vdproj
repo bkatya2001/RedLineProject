@@ -94,12 +94,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_50DB8B18C50168B9C78E3905DE373C7C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_A552A56336EC4D42B1A7343DC05FB932"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -139,6 +133,12 @@
         "OwnerKey" = "8:_94CEB8C56B5FA8E3486E509CE0B2574E"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_50DB8B18C50168B9C78E3905DE373C7C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -157,6 +157,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -173,6 +181,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -627,17 +643,17 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_500A0F8ADAA5459888F25B4402C96674"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_CCA8739E7DCE46828A27B3EA8D1A24E6"
             {
-            "Name" = "8:Shortcut to User's Desktop"
+            "Name" = "8:RedLineProject"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_B75AE579C9D144CCA4CFEAF21850D394"
+            "Target" = "8:_A552A56336EC4D42B1A7343DC05FB932"
             "Folder" = "8:_B75AE579C9D144CCA4CFEAF21850D394"
-            "WorkingFolder" = "8:_B75AE579C9D144CCA4CFEAF21850D394"
+            "WorkingFolder" = "8:_16FC3CD11D734DDBA3CC2A7255B91ECC"
             "Icon" = "8:"
             "Feature" = "8:"
             }
