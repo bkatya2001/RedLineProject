@@ -33,6 +33,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_6DA13F6671DC462DB952AA110648A3D5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_844CB459D46E4B3CAA7787F81B3DDAD1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -164,6 +170,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -188,6 +202,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -278,6 +300,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6DA13F6671DC462DB952AA110648A3D5"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\..\\Downloads\\RedLineIco.ico"
+            "TargetName" = "8:RedLineIco.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_16FC3CD11D734DDBA3CC2A7255B91ECC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_844CB459D46E4B3CAA7787F81B3DDAD1"
@@ -523,23 +565,23 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:RedLine"
         "ProductCode" = "8:{9837437B-3CFC-4D78-BAC4-4A00FE1A640E}"
-        "PackageCode" = "8:{76C6568C-6B1A-43C9-9509-755945C2FD23}"
+        "PackageCode" = "8:{62C67EDB-306C-48E2-A8A9-8E468B15847C}"
         "UpgradeCode" = "8:{D176FA39-B0B7-4E64-8FCF-44DD88C617A8}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:BMSTU"
+        "Manufacturer" = "8:BolshakovaKravtsov"
         "ARPHELPTELEPHONE" = "8:"
-        "ARPHELPLINK" = "8:"
+        "ARPHELPLINK" = "8:https://github.com/bkatya2001/RedLineProject/wiki"
         "Title" = "8:RedLine"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Bolshakova&Kravtsov"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
-        "ARPURLINFOABOUT" = "8:"
+        "ARPURLINFOABOUT" = "8:https://github.com/bkatya2001/RedLineProject"
         "ARPPRODUCTICON" = "8:"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
@@ -645,7 +687,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_CCA8739E7DCE46828A27B3EA8D1A24E6"
             {
-            "Name" = "8:RedLineProject"
+            "Name" = "8:RedLine"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -654,7 +696,7 @@
             "Target" = "8:_A552A56336EC4D42B1A7343DC05FB932"
             "Folder" = "8:_B75AE579C9D144CCA4CFEAF21850D394"
             "WorkingFolder" = "8:_16FC3CD11D734DDBA3CC2A7255B91ECC"
-            "Icon" = "8:"
+            "Icon" = "8:_6DA13F6671DC462DB952AA110648A3D5"
             "Feature" = "8:"
             }
         }
