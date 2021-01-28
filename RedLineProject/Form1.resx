@@ -128,9 +128,6 @@
   <data name="baseDetailLengthInput.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="baseDetailLengthInput.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;baseDetailLengthInput.Name" xml:space="preserve">
     <value>baseDetailLengthInput</value>
   </data>
@@ -151,9 +148,6 @@
   </data>
   <data name="baseDetailWidthInput.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="baseDetailWidthInput.Text" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;baseDetailWidthInput.Name" xml:space="preserve">
     <value>baseDetailWidthInput</value>
@@ -420,9 +414,6 @@
   <data name="detailWidthInput.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="detailWidthInput.Text" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;detailWidthInput.Name" xml:space="preserve">
     <value>detailWidthInput</value>
   </data>
@@ -443,9 +434,6 @@
   </data>
   <data name="detailLengthInput.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
-  </data>
-  <data name="detailLengthInput.Text" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;detailLengthInput.Name" xml:space="preserve">
     <value>detailLengthInput</value>
@@ -494,87 +482,6 @@
   </data>
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;materialLabel1.Name" xml:space="preserve">
-    <value>materialLabel1</value>
-  </data>
-  <data name="&gt;&gt;materialLabel1.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialLabel, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;materialLabel1.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;materialLabel1.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;detailCountInput.Name" xml:space="preserve">
-    <value>detailCountInput</value>
-  </data>
-  <data name="&gt;&gt;detailCountInput.Type" xml:space="preserve">
-    <value>MaterialSkin.Controls.MaterialSingleLineTextField, MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;detailCountInput.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;detailCountInput.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="tableLayoutPanel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 83</value>
-  </data>
-  <data name="tableLayoutPanel1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>363, 502</value>
-  </data>
-  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="materialFlatButton2" Row="12" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel6" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="detailWidthInput" Row="8" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel5" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="baseDetailWidthInput" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel3" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label2" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel7" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="detailLengthInput" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel1" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="edgeInput" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel4" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="baseDetailLengthInput" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="detailCountInput" Row="10" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,52,89256,Percent,47,10744" /&gt;&lt;Rows Styles="Percent,7,692485,Percent,7,692485,Percent,7,692485,Percent,7,692485,Percent,7,692485,Percent,7,692485,Percent,7,692485,Percent,7,692485,Percent,7,692485,Percent,7,692485,Percent,7,692485,Percent,7,690178,Percent,7,692485,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -689,6 +596,39 @@
   </data>
   <data name="&gt;&gt;detailCountInput.ZOrder" xml:space="preserve">
     <value>14</value>
+  </data>
+  <data name="tableLayoutPanel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 83</value>
+  </data>
+  <data name="tableLayoutPanel1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>363, 502</value>
+  </data>
+  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="materialFlatButton2" Row="12" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel6" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="detailWidthInput" Row="8" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel5" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="baseDetailWidthInput" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel3" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label2" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel7" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="detailLengthInput" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel1" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="edgeInput" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="materialLabel4" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="baseDetailLengthInput" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="detailCountInput" Row="10" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,52,89256,Percent,47,10744" /&gt;&lt;Rows Styles="Percent,7,692485,Percent,7,692485,Percent,7,692485,Percent,7,692485,Percent,7,692485,Percent,7,692485,Percent,7,692485,Percent,7,692485,Percent,7,692485,Percent,7,692485,Percent,7,692485,Percent,7,690178,Percent,7,692485,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>

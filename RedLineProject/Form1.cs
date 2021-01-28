@@ -11,6 +11,7 @@ using RedLineProject.Classes;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using Markdig;
+using System.IO;
 
 namespace RedLineProject
 {
@@ -271,7 +272,20 @@ namespace RedLineProject
                         count = 0;
 
                         Compute();
-
+                        //print to file
+                        //using (StreamWriter file =
+                        //    new StreamWriter("my.txt", false))
+                        //{
+                        //    for (int i = 0; i < width; ++i)
+                        //    {
+                        //        for (int j = 0; j < length; ++j)
+                        //        {
+                        //            file.Write(field[i, j].ToString());
+                        //        }
+                        //        file.WriteLine(" ");
+                        //    }
+                        //}
+                        //
                         baseDetailLengthInput.Clear();
                         baseDetailWidthInput.Clear();
                         edgeInput.Clear();

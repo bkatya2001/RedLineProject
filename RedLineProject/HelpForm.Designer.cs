@@ -50,7 +50,7 @@ namespace RedLineProject
             this.Controls.Add(this.webBrowser1);
             this.Name = "HelpForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "HelpForm";
+            this.Text = "RedLineHelp";
             this.ResumeLayout(false);
 
         }
