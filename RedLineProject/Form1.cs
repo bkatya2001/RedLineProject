@@ -23,6 +23,24 @@ namespace RedLineProject
         int edge; // Кромка
         int count; // Счётчик
 
+        private void WriteFile()
+        {
+            using (StreamWriter file = new StreamWriter("my.txt", true))
+            {
+                for (int i = 0; i < baseDetail.GetWidth(); ++i)
+                {
+                    for (int j = 0; j < baseDetail.GetLength(); ++j)
+                    {
+                        //Encoding.ASCII.GetString(BitConverter.GetBytes(field[i, j])));
+                        file.Write(field[i, j].ToString());
+                    }
+                    file.WriteLine();
+                }
+                file.WriteLine("__________________________________________");
+                file.WriteLine();
+            }
+        }
+
         private void SetZero() // Обнуление поля
         {
             int length = baseDetail.GetLength(); // Количество столбцов
@@ -39,11 +57,14 @@ namespace RedLineProject
 
         private void SetOne(int iStart, int jStart, int length, int width) // Установка единиц по размеру детали и фреза
         {
+            int up = 0;
+            int down = 0;
             if (edge > 0)
             {
                 int k = iStart - 1; // Верхняя граница
                 while (k >= 0 && k >= iStart - edge)
                 {
+                    up++;
                     for (int j = jStart; j < jStart + length; j++)
                     {
                         field[k, j] = 9;
@@ -54,6 +75,7 @@ namespace RedLineProject
                 k = iStart + width; // Нижняя граница
                 while (k < baseDetail.GetWidth() && k <= iStart + edge + width - 1)
                 {
+                    down++;
                     for (int j = jStart; j < jStart + length; j++)
                     {
                         field[k, j] = 9;
@@ -64,7 +86,7 @@ namespace RedLineProject
                 k = jStart - 1; // Граница слева
                 while (k >= 0 && k >= jStart - edge)
                 {
-                    for (int i = iStart; i < iStart + width; i++)
+                    for (int i = iStart - up; i < iStart + width + down; i++)
                     {
                         field[i, k] = 9;
                     }
@@ -74,7 +96,7 @@ namespace RedLineProject
                 k = jStart + length; // Граница справа
                 while (k < baseDetail.GetLength() && k <= jStart + edge + length - 1)
                 {
-                    for (int i = iStart; i < iStart + width; i++)
+                    for (int i = iStart - up; i < iStart + width + down; i++)
                     {
                         field[i, k] = 9;
                     }
@@ -173,7 +195,7 @@ namespace RedLineProject
             return false;
         }
 
-        private void Compute() // метод для рассчёта (на вход размеры базовой доски)
+        private void Compute() // метод для рассчёта
         {
             details.Sort(Detail.CompareDetails);
 
@@ -193,6 +215,7 @@ namespace RedLineProject
                         }
                     }
                 }
+                WriteFile();
             }
         }
 
@@ -215,6 +238,7 @@ namespace RedLineProject
         private void Form1_Load(object sender, EventArgs e)
         {
             details = new List<Detail>();
+            File.Delete("my.txt"); // При запуске программы удаляем файл с расположением деталей.
         }
 
         private void materialFlatButton2_Click(object sender, EventArgs e)
@@ -272,21 +296,7 @@ namespace RedLineProject
                         count = 0;
 
                         Compute();
-                        //print to file
-                        using (StreamWriter file =
-                            new StreamWriter("my.txt", false))
-                        {
-                            for (int i = 0; i < width; ++i)
-                            {
-                                for (int j = 0; j < length; ++j)
-                                {
-                                    //Encoding.ASCII.GetString(BitConverter.GetBytes(field[i, j])));
-                                    file.Write(field[i, j].ToString());
-                                }
-                                file.WriteLine(" ");
-                            }
-                        }
-                        //
+
                         baseDetailLengthInput.Clear();
                         baseDetailWidthInput.Clear();
                         edgeInput.Clear();
