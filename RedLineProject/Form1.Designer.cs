@@ -52,6 +52,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.helpLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.supportButton = new MaterialSkin.Controls.MaterialLabel();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -295,10 +296,21 @@
             this.helpLabel.Name = "helpLabel";
             this.helpLabel.Click += new System.EventHandler(this.helpLabel_Click);
             // 
+            // supportButton
+            // 
+            this.supportButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(243)))), ((int)(((byte)(224)))));
+            this.supportButton.Depth = 0;
+            resources.ApplyResources(this.supportButton, "supportButton");
+            this.supportButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.supportButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.supportButton.Name = "supportButton";
+            this.supportButton.Click += new System.EventHandler(this.supportButton_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.supportButton);
             this.Controls.Add(this.helpLabel);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.materialFlatButton1);
@@ -341,6 +353,7 @@
         private System.Windows.Forms.Label label4;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel helpLabel;
+        private MaterialSkin.Controls.MaterialLabel supportButton;
     }
 }
 

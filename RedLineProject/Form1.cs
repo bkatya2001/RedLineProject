@@ -215,7 +215,7 @@ namespace RedLineProject
                         }
                     }
                 }
-                WriteFile();
+                //WriteFile();
             }
         }
 
@@ -343,6 +343,25 @@ namespace RedLineProject
             var helpForm = new HelpForm(GetDocs());
 
             helpForm.Show();
+        }
+
+        private void supportButton_Click(object sender, EventArgs e)
+        {
+            string myStr = "Это приложение абсолютно бесплатное и держится лишь на нашем энтузиазме и любви к людям. " +
+                "В данный момент мы активно работает над новой версией приложения с расширенным функционалом," +
+                " чтобы вам было удобнее и приятней с ним работать." +
+                "\n" +
+                "\n" +
+                "Поблагодарить разработчиков можно, используя следующие данные:" +
+                "\n" +
+                "\n" +
+                "Большакова Екатерина Дмитриевна  +7 (905) 530 48 87" +
+                "\n" +
+                "Кравцов Иван Константинович  +7 (953) 213 88 75" +
+                "\n" +
+                "\n" +
+                "Ваши пожертвования помогут нам развиваться!";
+            MessageBox.Show( myStr, "RedLine", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
