@@ -42,41 +42,41 @@ namespace RedLineProject
             if (edge > 0)
             {
                 int k = iStart - 1; // Верхняя граница
-                while (k >= 0 && k != iStart - edge)
+                while (k >= 0 && k >= iStart - edge)
                 {
                     for (int j = jStart; j < jStart + length; j++)
                     {
-                        field[k, j] = 1;
+                        field[k, j] = 9;
                     }
                     k--;
                 }
 
                 k = iStart + width; // Нижняя граница
-                while (k < baseDetail.GetWidth() && k != iStart + edge + width - 1)
+                while (k < baseDetail.GetWidth() && k <= iStart + edge + width - 1)
                 {
                     for (int j = jStart; j < jStart + length; j++)
                     {
-                        field[k, j] = 1;
+                        field[k, j] = 9;
                     }
                     k++;
                 }
 
                 k = jStart - 1; // Граница слева
-                while (k >= 0 && k != jStart - edge)
+                while (k >= 0 && k >= jStart - edge)
                 {
                     for (int i = iStart; i < iStart + width; i++)
                     {
-                        field[i, k] = 1;
+                        field[i, k] = 9;
                     }
                     k--;
                 }
 
                 k = jStart + length; // Граница справа
-                while (k < baseDetail.GetLength() && k != jStart + edge + length - 1)
+                while (k < baseDetail.GetLength() && k <= jStart + edge + length - 1)
                 {
                     for (int i = iStart; i < iStart + width; i++)
                     {
-                        field[i, k] = 1;
+                        field[i, k] = 9;
                     }
                     k++;
                 }
@@ -106,7 +106,7 @@ namespace RedLineProject
                 {
                     for (int j = 0; j < baseL; j++)
                     {
-                        if (field[i, j] == 1) count = 0;
+                        if (field[i, j] != 0) count = 0;
                         if (field[i, j] == 0) count++;
                         if (count == length)
                         {
@@ -114,7 +114,7 @@ namespace RedLineProject
                             {
                                 for (int l = j - length + 1; l <= j; l++)
                                 {
-                                    if (field[k, l] == 1)
+                                    if (field[k, l] != 0)
                                     {
                                         count = -1;
                                         break;
@@ -143,7 +143,7 @@ namespace RedLineProject
                 {
                     for (int j = 0; j < baseL; j++)
                     {
-                        if (field[i, j] == 1) count = 0;
+                        if (field[i, j] != 0) count = 0;
                         if (field[i, j] == 0) count++;
                         if (count == length)
                         {
@@ -151,7 +151,7 @@ namespace RedLineProject
                             {
                                 for (int l = j - length + 1; l <= j; l++)
                                 {
-                                    if (field[k, l] == 1)
+                                    if (field[k, l] != 0)
                                     {
                                         count = -1;
                                         break;
@@ -273,18 +273,19 @@ namespace RedLineProject
 
                         Compute();
                         //print to file
-                        //using (StreamWriter file =
-                        //    new StreamWriter("my.txt", false))
-                        //{
-                        //    for (int i = 0; i < width; ++i)
-                        //    {
-                        //        for (int j = 0; j < length; ++j)
-                        //        {
-                        //            file.Write(field[i, j].ToString());
-                        //        }
-                        //        file.WriteLine(" ");
-                        //    }
-                        //}
+                        using (StreamWriter file =
+                            new StreamWriter("my.txt", false))
+                        {
+                            for (int i = 0; i < width; ++i)
+                            {
+                                for (int j = 0; j < length; ++j)
+                                {
+                                    //Encoding.ASCII.GetString(BitConverter.GetBytes(field[i, j])));
+                                    file.Write(field[i, j].ToString());
+                                }
+                                file.WriteLine(" ");
+                            }
+                        }
                         //
                         baseDetailLengthInput.Clear();
                         baseDetailWidthInput.Clear();
