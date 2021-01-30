@@ -67,7 +67,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Computations.cs" />
     <Compile Include="Classes\Detail.cs" />
+    <Compile Include="Classes\FileWorker.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
