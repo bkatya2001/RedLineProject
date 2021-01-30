@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RedLineProject.Classes
 {
-    class Detail // Класс коллекции детали одного вида
+    public class Detail // Класс коллекции детали одного вида
     {
         int length;
         int width;
@@ -22,6 +22,8 @@ namespace RedLineProject.Classes
         public int GetLength() { return length; }
         public int GetWidth() { return width; }
         public int GetCount() { return count; }
+
+        public void ResetCountToZero() { count = 0; }
 
         public void Increment() { count++; }
 

@@ -1,225 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using RedLineProject.Classes;
 using MaterialSkin;
 using MaterialSkin.Controls;
-using Markdig;
-using System.IO;
 
 namespace RedLineProject
 {
     public partial class Form1 : MaterialForm
     {
-        List<Detail> details; // Лист деталей
-        int[,] field; // Двумерный массив для базовой доски
-        Detail baseDetail; // Основа
-        int edge; // Кромка
-        int count; // Счётчик
-
-        private void WriteFile()
-        {
-            using (StreamWriter file = new StreamWriter("my.txt", true))
-            {
-                for (int i = 0; i < baseDetail.GetWidth(); ++i)
-                {
-                    for (int j = 0; j < baseDetail.GetLength(); ++j)
-                    {
-                        //Encoding.ASCII.GetString(BitConverter.GetBytes(field[i, j])));
-                        file.Write(field[i, j].ToString());
-                    }
-                    file.WriteLine();
-                }
-                file.WriteLine("__________________________________________");
-                file.WriteLine();
-            }
-        }
-
-        private void SetZero() // Обнуление поля
-        {
-            int length = baseDetail.GetLength(); // Количество столбцов
-            int width = baseDetail.GetWidth(); // Количество строк
-
-            for (int i = 0; i < width; i++)
-            {
-                for (int j = 0; j < length; j++)
-                {
-                    field[i, j] = 0;
-                }
-            }
-        }
-
-        private void SetOne(int iStart, int jStart, int length, int width) // Установка единиц по размеру детали и фреза
-        {
-            int up = 0;
-            int down = 0;
-            if (edge > 0)
-            {
-                int k = iStart - 1; // Верхняя граница
-                while (k >= 0 && k >= iStart - edge)
-                {
-                    up++;
-                    for (int j = jStart; j < jStart + length; j++)
-                    {
-                        field[k, j] = 9;
-                    }
-                    k--;
-                }
-
-                k = iStart + width; // Нижняя граница
-                while (k < baseDetail.GetWidth() && k <= iStart + edge + width - 1)
-                {
-                    down++;
-                    for (int j = jStart; j < jStart + length; j++)
-                    {
-                        field[k, j] = 9;
-                    }
-                    k++;
-                }
-
-                k = jStart - 1; // Граница слева
-                while (k >= 0 && k >= jStart - edge)
-                {
-                    for (int i = iStart - up; i < iStart + width + down; i++)
-                    {
-                        field[i, k] = 9;
-                    }
-                    k--;
-                }
-
-                k = jStart + length; // Граница справа
-                while (k < baseDetail.GetLength() && k <= jStart + edge + length - 1)
-                {
-                    for (int i = iStart - up; i < iStart + width + down; i++)
-                    {
-                        field[i, k] = 9;
-                    }
-                    k++;
-                }
-            }
-            
-            for (int i = iStart; i < iStart + width; i++) // Деталь
-            {
-                for (int j = jStart; j < jStart + length; j++)
-                {
-                    field[i, j] = 1;
-                }
-            }
-        }
-
-        private bool SetDetail(int index) // Попытка установки детали
-        {
-            int length = details[index].GetLength();
-            int width = details[index].GetWidth();
-
-            int baseL = baseDetail.GetLength();
-            int baseW = baseDetail.GetWidth();
-
-            for (int i = 0; i < baseW; i++)
-            {
-                int count = 0;
-                if (i + width <= baseW)
-                {
-                    for (int j = 0; j < baseL; j++)
-                    {
-                        if (field[i, j] != 0) count = 0;
-                        if (field[i, j] == 0) count++;
-                        if (count == length)
-                        {
-                            for (int k = i + 1; k < i + width; k++)
-                            {
-                                for (int l = j - length + 1; l <= j; l++)
-                                {
-                                    if (field[k, l] != 0)
-                                    {
-                                        count = -1;
-                                        break;
-                                    }
-                                    else count++;
-                                }
-                                if (count == -1) break;
-                            }
-                            if (count == length * width)
-                            {
-                                details[index].Decrement();
-                                SetOne(i, j - length + 1, length, width);
-                                return true;
-                            }
-                        }
-                    }
-                }
-            }
-            // Разворот детали
-            length = details[index].GetWidth();
-            width = details[index].GetLength();
-            for (int i = 0; i < baseW; i++)
-            {
-                int count = 0;
-                if (i + width <= baseW)
-                {
-                    for (int j = 0; j < baseL; j++)
-                    {
-                        if (field[i, j] != 0) count = 0;
-                        if (field[i, j] == 0) count++;
-                        if (count == length)
-                        {
-                            for (int k = i + 1; k < i + width; k++)
-                            {
-                                for (int l = j - length + 1; l <= j; l++)
-                                {
-                                    if (field[k, l] != 0)
-                                    {
-                                        count = -1;
-                                        break;
-                                    }
-                                    else count++;
-                                }
-                                if (count == -1) break;
-                            }
-                            if (count == length * width)
-                            {
-                                details[index].Decrement();
-                                SetOne(i, j - length + 1, length, width);
-                                return true;
-                            }
-                        }
-                    }
-                }
-            }
-            return false;
-        }
-
-        private void Compute() // метод для рассчёта
-        {
-            details.Sort(Detail.CompareDetails);
-
-            while (details.Count > 0)
-            {
-                count++;
-                SetZero();
-                for (int i = 0; i < details.Count; i++)
-                {
-                    while (SetDetail(i))
-                    {
-                        if (details[i].GetCount() == 0)
-                        {
-                            details.RemoveAt(i);
-                            i--;
-                            break;
-                        }
-                    }
-                }
-                //WriteFile();
-            }
-        }
-
-
+        Computations computations = new Computations();
         public Form1()
         {
             InitializeComponent();
@@ -237,8 +27,8 @@ namespace RedLineProject
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            details = new List<Detail>();
-            File.Delete("my.txt"); // При запуске программы удаляем файл с расположением деталей.
+            computations.details = new List<Detail>();
+            FileWorker.ClearData();
         }
 
         private void materialFlatButton2_Click(object sender, EventArgs e)
@@ -253,7 +43,7 @@ namespace RedLineProject
                     MessageBox.Show("Введите размеры детали и количество.", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    details.Add(new Detail(length, width, count));
+                    computations.details.Add(new Detail(length, width, count));
 
                     detailLengthInput.Clear();
                     detailWidthInput.Clear();
@@ -261,7 +51,7 @@ namespace RedLineProject
 
                     detailListView.Items.Clear();
 
-                    foreach (var d in details)
+                    foreach (var d in computations.details)
                     {
                         detailListView.Items.Add(new ListViewItem(new string[]
                         { d.GetLength().ToString() + " * " + d.GetWidth().ToString(), d.GetCount().ToString() }));
@@ -287,25 +77,25 @@ namespace RedLineProject
                     MessageBox.Show("Введите размеры ДСП.", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    edge = ed;
-                    baseDetail = new Detail(length, width, 1);
+                    computations.edge = ed;
+                    computations.baseDetail = new Detail(length, width, 0);
 
                     if (CheckDetails())
                     {
-                        field = new int[width, length];
-                        count = 0;
+                        computations.field = new int[width, length];
+                        computations.baseDetail.ResetCountToZero();
 
-                        Compute();
+                        computations.Compute();
 
                         baseDetailLengthInput.Clear();
                         baseDetailWidthInput.Clear();
                         edgeInput.Clear();
 
-                        MessageBox.Show("Вам понадобится " + count + " ДСП.", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Вам понадобится " + computations.baseDetail.GetCount() + " ДСП.", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else MessageBox.Show("Размеры детали не могут превышать размеры ДСП.", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    details.Clear();
+                    computations.details.Clear();
                 }
             }
             catch (Exception)
@@ -316,10 +106,10 @@ namespace RedLineProject
 
         private bool CheckDetails()
         {
-            int length = baseDetail.GetLength();
-            int width = baseDetail.GetWidth();
+            int length = computations.baseDetail.GetLength();
+            int width = computations.baseDetail.GetWidth();
 
-            foreach (Detail d in details)
+            foreach (Detail d in computations.details)
             {
                 int l = d.GetLength();
                 int w = d.GetWidth();
@@ -330,17 +120,9 @@ namespace RedLineProject
             return true;
         }
 
-        private string GetDocs()
-        {
-            string text = System.IO.File.ReadAllText(Environment.CurrentDirectory + @"\docs\for_users.md");
-            var result = Markdown.ToHtml(text);
-
-            return result;
-        }
-
         private void helpLabel_Click(object sender, EventArgs e)
         {
-            var helpForm = new HelpForm(GetDocs());
+            var helpForm = new HelpForm(FileWorker.GetDocs());
 
             helpForm.Show();
         }
