@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedLineProject", "RedLineProject\RedLineProject.csproj", "{3C948607-39D9-404A-8C68-028DE1DFDCD5}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "RedLineSetup", "RedLineSetup\RedLineSetup.vdproj", "{B9F6A861-4A57-45BA-AD45-ED22584FCCF2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedLineTest", "RedLineTest\RedLineTest.csproj", "{6F6C2E15-256B-4846-9ACE-F801ED46A3AA}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{67D7C4A1-A8FC-43A4-B3E6-7C5B5DDE8692}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,13 @@ Global
 		{3C948607-39D9-404A-8C68-028DE1DFDCD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C948607-39D9-404A-8C68-028DE1DFDCD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C948607-39D9-404A-8C68-028DE1DFDCD5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B9F6A861-4A57-45BA-AD45-ED22584FCCF2}.Debug|Any CPU.ActiveCfg = Debug
-		{B9F6A861-4A57-45BA-AD45-ED22584FCCF2}.Debug|Any CPU.Build.0 = Debug
-		{B9F6A861-4A57-45BA-AD45-ED22584FCCF2}.Release|Any CPU.ActiveCfg = Release
-		{B9F6A861-4A57-45BA-AD45-ED22584FCCF2}.Release|Any CPU.Build.0 = Release
 		{6F6C2E15-256B-4846-9ACE-F801ED46A3AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6F6C2E15-256B-4846-9ACE-F801ED46A3AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F6C2E15-256B-4846-9ACE-F801ED46A3AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F6C2E15-256B-4846-9ACE-F801ED46A3AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67D7C4A1-A8FC-43A4-B3E6-7C5B5DDE8692}.Debug|Any CPU.ActiveCfg = Debug
+		{67D7C4A1-A8FC-43A4-B3E6-7C5B5DDE8692}.Debug|Any CPU.Build.0 = Debug
+		{67D7C4A1-A8FC-43A4-B3E6-7C5B5DDE8692}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
