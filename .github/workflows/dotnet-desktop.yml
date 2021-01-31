@@ -39,8 +39,9 @@ jobs:
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v1.0.2
 
-#    - name: Setup project
-#      run: rmdir Setup
+    - name: Setup project
+      run: cd Setup
+      run: del Setup.vdproj
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Build the application
