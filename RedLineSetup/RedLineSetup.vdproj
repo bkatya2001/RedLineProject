@@ -22,13 +22,19 @@
         "Entry"
         {
         "MsmKey" = "8:_28ABBC7E73ED42E576A71888038A69C3"
-        "OwnerKey" = "8:_A552A56336EC4D42B1A7343DC05FB932"
+        "OwnerKey" = "8:_3442FF99D6214C26AD6985E2FF1FCB8A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3442FF99D6214C26AD6985E2FF1FCB8A"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_50DB8B18C50168B9C78E3905DE373C7C"
-        "OwnerKey" = "8:_A552A56336EC4D42B1A7343DC05FB932"
+        "OwnerKey" = "8:_3442FF99D6214C26AD6985E2FF1FCB8A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -52,7 +58,7 @@
         "Entry"
         {
         "MsmKey" = "8:_94CEB8C56B5FA8E3486E509CE0B2574E"
-        "OwnerKey" = "8:_A552A56336EC4D42B1A7343DC05FB932"
+        "OwnerKey" = "8:_3442FF99D6214C26AD6985E2FF1FCB8A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -64,25 +70,19 @@
         "Entry"
         {
         "MsmKey" = "8:_9D05DAED7EF57F6A58D154D5A64A9D37"
-        "OwnerKey" = "8:_A552A56336EC4D42B1A7343DC05FB932"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A552A56336EC4D42B1A7343DC05FB932"
-        "OwnerKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_3442FF99D6214C26AD6985E2FF1FCB8A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_B19C544AB6898FD65429E661EE462B34"
-        "OwnerKey" = "8:_A552A56336EC4D42B1A7343DC05FB932"
+        "OwnerKey" = "8:_3442FF99D6214C26AD6985E2FF1FCB8A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_C2FA94A5EBE1E8D5843CB3BCD6CAD0B5"
-        "OwnerKey" = "8:_A552A56336EC4D42B1A7343DC05FB932"
+        "OwnerKey" = "8:_3442FF99D6214C26AD6985E2FF1FCB8A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -94,13 +94,13 @@
         "Entry"
         {
         "MsmKey" = "8:_F0A63C65B0E91A3BEF219794BB4D256D"
-        "OwnerKey" = "8:_A552A56336EC4D42B1A7343DC05FB932"
+        "OwnerKey" = "8:_3442FF99D6214C26AD6985E2FF1FCB8A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A552A56336EC4D42B1A7343DC05FB932"
+        "OwnerKey" = "8:_3442FF99D6214C26AD6985E2FF1FCB8A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -565,7 +565,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:RedLine"
         "ProductCode" = "8:{9837437B-3CFC-4D78-BAC4-4A00FE1A640E}"
-        "PackageCode" = "8:{62C67EDB-306C-48E2-A8A9-8E468B15847C}"
+        "PackageCode" = "8:{EE99CB7B-5181-400C-87F1-BE43D9FD79E1}"
         "UpgradeCode" = "8:{D176FA39-B0B7-4E64-8FCF-44DD88C617A8}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -685,7 +685,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_CCA8739E7DCE46828A27B3EA8D1A24E6"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3AD40E58135948A3BFC714825243DA32"
             {
             "Name" = "8:RedLine"
             "Arguments" = "8:"
@@ -693,10 +693,10 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_A552A56336EC4D42B1A7343DC05FB932"
+            "Target" = "8:_3442FF99D6214C26AD6985E2FF1FCB8A"
             "Folder" = "8:_B75AE579C9D144CCA4CFEAF21850D394"
             "WorkingFolder" = "8:_16FC3CD11D734DDBA3CC2A7255B91ECC"
-            "Icon" = "8:_6DA13F6671DC462DB952AA110648A3D5"
+            "Icon" = "8:"
             "Feature" = "8:"
             }
         }
@@ -1098,9 +1098,9 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A552A56336EC4D42B1A7343DC05FB932"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_3442FF99D6214C26AD6985E2FF1FCB8A"
             {
-            "SourcePath" = "8:..\\RedLineProject\\obj\\Release\\RedLineProject.exe"
+            "SourcePath" = "8:..\\RedLineProject\\obj\\Debug\\RedLineProject.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_16FC3CD11D734DDBA3CC2A7255B91ECC"
